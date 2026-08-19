@@ -11,6 +11,9 @@
   <img src="https://img.shields.io/badge/Status-Work%20in%20Progress-yellow" alt="Work in Progress">
 </p>
 
+![Screenshot des Learning Books](images/learning_book_screenshot.png)
+
+
 A collection of **Python learning notes, examples, exercises, and projects**, created primarily with Jupyter notebooks.
 
 ## Repository Structure
