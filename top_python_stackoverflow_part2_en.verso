@@ -1,0 +1,257 @@
+{
+  "verso": "1.1",
+  "metadata": {
+    "defaultKernel": "python",
+    "activeLayout": {
+      "extensionId": "verso.layout.notebook",
+      "layoutId": "notebook"
+    }
+  },
+  "cells": [
+    {
+      "id": "b1d69f52-4bc6-4d0d-b94c-79a49950686b",
+      "type": "markdown",
+      "source": "# Top Python Stack Overflow Solutions (Part 2: Questions 21\u201340)\nThis Jupyter Notebook continues the collection, summarizing questions 21 to 40 of the highest-rated Python questions and answers from Stack Overflow."
+    },
+    {
+      "id": "f3c08b16-944c-4db1-94e8-f7a03c8b33cd",
+      "type": "markdown",
+      "source": "## 21. How to parse a string into a datetime object?\n**Stack Overflow:** [View Post](https://stackoverflow.com/questions/466345/how-to-parse-a-string-into-a-datetime-object)\n\n**Problem:** The user wants to convert a formatted date string into a Python \u0060datetime\u0060 object.\n\n**Answer:** Use \u0060datetime.strptime()\u0060 specifying the appropriate format directives."
+    },
+    {
+      "id": "f89dbaf2-33fe-4aea-ae7f-198c48e5394f",
+      "type": "code",
+      "language": "python",
+      "source": "from datetime import datetime\ndate_str = \u00222026-10-13 14:30:00\u0022\ndt_obj = datetime.strptime(date_str, \u0022%Y-%m-%d %H:%M:%S\u0022)\nprint(dt_obj, type(dt_obj))"
+    },
+    {
+      "id": "afdd3baa-067e-4568-b608-a152b47cca0e",
+      "type": "markdown",
+      "source": "## 22. How do I get the current date and time in Python?\n**Stack Overflow:** [View Post](https://stackoverflow.com/questions/1458925/how-to-get-the-current-time-and-date-in-python)\n\n**Problem:** The user wants to retrieve the current local date and time.\n\n**Answer:** Use \u0060datetime.now()\u0060 from the built-in \u0060datetime\u0060 module."
+    },
+    {
+      "id": "0fa1eac7-ed13-46a8-b607-ad4345be480b",
+      "type": "code",
+      "language": "python",
+      "source": "from datetime import datetime\nnow = datetime.now()\nprint(\u0022Current datetime:\u0022, now)"
+    },
+    {
+      "id": "baf98895-6ec8-486e-b549-3eed27d499fd",
+      "type": "markdown",
+      "source": "## 23. Check if a directory exists in Python\n**Stack Overflow:** [View Post](https://stackoverflow.com/questions/8982343/check-if-a-directory-exists-in-python)\n\n**Problem:** The user needs to verify if a folder path exists before performing file operations.\n\n**Answer:** Use \u0060Path.is_dir()\u0060 from the \u0060pathlib\u0060 module."
+    },
+    {
+      "id": "43c31e8c-911d-41f7-a060-47c850d2afb4",
+      "type": "code",
+      "language": "python",
+      "source": "from pathlib import Path\ndir_path = Path(\u0022.\u0022)\nprint(\u0022Is directory:\u0022, dir_path.is_dir())"
+    },
+    {
+      "id": "fde7680a-2609-4f25-9ee7-b31b09cbc169",
+      "type": "markdown",
+      "source": "## 24. How to parse / read a JSON file in Python?\n**Stack Overflow:** [View Post](https://stackoverflow.com/questions/2835559/how-to-parse-a-json-file-in-python)\n\n**Problem:** The user wants to load and read JSON data into a Python dictionary.\n\n**Answer:** Use the built-in \u0060json\u0060 module with \u0060json.load()\u0060 or \u0060json.loads()\u0060."
+    },
+    {
+      "id": "67263649-0d03-487e-942b-2130cec0863c",
+      "type": "code",
+      "language": "python",
+      "source": "import json\njson_data = \u0027{\u0022name\u0022: \u0022Python\u0022, \u0022version\u0022: 3.12}\u0027\ndata = json.loads(json_data)\nprint(data[\u0022name\u0022])"
+    },
+    {
+      "id": "6dec54dd-c4e8-4bd5-9334-790dd5824216",
+      "type": "markdown",
+      "source": "## 25. How do I sort a list of dictionaries in Python?\n**Stack Overflow:** [View Post](https://stackoverflow.com/questions/72899/how-do-i-sort-a-list-of-dictionaries-in-python)\n\n**Problem:** The user wants to sort a list containing dictionary objects based on a specific key value.\n\n**Answer:** Use \u0060sorted()\u0060 combined with a lambda function."
+    },
+    {
+      "id": "f61fe986-c7d4-4bf3-8db4-dee11f20fdd3",
+      "type": "code",
+      "language": "python",
+      "source": "users = [{\u0022name\u0022: \u0022Alice\u0022, \u0022age\u0022: 30}, {\u0022name\u0022: \u0022Bob\u0022, \u0022age\u0022: 25}]\nsorted_users = sorted(users, key=lambda x: x[\u0022age\u0022])\nprint(sorted_users)",
+      "outputs": [
+        {
+          "mimeType": "text/plain",
+          "content": "[{\u0027name\u0027: \u0027Bob\u0027, \u0027age\u0027: 25}, {\u0027name\u0027: \u0027Alice\u0027, \u0027age\u0027: 30}]\n",
+          "channel": "stdout"
+        }
+      ],
+      "metadata": {
+        "execution_count": 1
+      }
+    },
+    {
+      "id": "eb20a486-ef6c-48d5-9694-3e7ae0f895f1",
+      "type": "markdown",
+      "source": "## 26. How to take the union of multiple lists (unique values)?\n**Stack Overflow:** [View Post](https://stackoverflow.com/questions/1230104/how-to-take-union-of-multiple-lists-in-python)\n\n**Problem:** The user wants to combine multiple lists while removing duplicate values.\n\n**Answer:** Convert the lists to \u0060set\u0060s and use the union operator \u0060|\u0060."
+    },
+    {
+      "id": "3a685a0c-15ff-4fab-88a0-28bcfb5161fc",
+      "type": "code",
+      "language": "python",
+      "source": "list1 = [1, 2, 3]\nlist2 = [3, 4, 5]\nunique_union = list(set(list1) | set(list2))\nprint(unique_union)",
+      "outputs": [
+        {
+          "mimeType": "text/plain",
+          "content": "[1, 2, 3, 4, 5]\n",
+          "channel": "stdout"
+        }
+      ],
+      "metadata": {
+        "execution_count": 2
+      }
+    },
+    {
+      "id": "af7ad046-cc2d-4c91-a426-cdf01fd6c6c5",
+      "type": "markdown",
+      "source": "## 27. How to reverse a list in Python?\n**Stack Overflow:** [View Post](https://stackoverflow.com/questions/394144/how-to-reverse-a-list-in-python)\n\n**Problem:** The user wants to reverse the order of elements in a list.\n\n**Answer:** Use slicing \u0060[::-1]\u0060 or the \u0060reversed()\u0060 function."
+    },
+    {
+      "id": "80b3cb6d-1058-43fc-9ff1-c9ebada47bda",
+      "type": "code",
+      "language": "python",
+      "source": "items = [1, 2, 3, 4]\nreversed_items = items[::-1]\nprint(reversed_items)"
+    },
+    {
+      "id": "3296ae52-3564-4f6d-90ec-62a85cd814b8",
+      "type": "markdown",
+      "source": "## 28. How to convert a list to a string in Python?\n**Stack Overflow:** [View Post](https://stackoverflow.com/questions/5618878/how-to-convert-list-to-string-in-python)\n\n**Problem:** The user wants to join elements of a list of strings into a single concatenated string.\n\n**Answer:** Use the \u0060join()\u0060 method on a separator string."
+    },
+    {
+      "id": "dda41d4a-e67b-4f27-8f26-8d83f7894789",
+      "type": "code",
+      "language": "python",
+      "source": "words = [\u0022Python\u0022, \u0022is\u0022, \u0022awesome\u0022]\nsentence = \u0022 \u0022.join(words)\nprint(sentence)"
+    },
+    {
+      "id": "b49abbbc-d3d6-44cb-b83f-fb710d6d8cba",
+      "type": "markdown",
+      "source": "## 29. How do I check if all items in a list match a condition?\n**Stack Overflow:** [View Post](https://stackoverflow.com/questions/1524350/how-do-i-check-if-all-items-in-a-list-match-a-condition)\n\n**Problem:** The user wants to test if every element in an iterable satisfies a boolean condition.\n\n**Answer:** Use the built-in \u0060all()\u0060 function with a generator expression."
+    },
+    {
+      "id": "57c27d01-be5f-4f2c-93f1-21809e18e394",
+      "type": "code",
+      "language": "python",
+      "source": "numbers = [2, 4, 6, 8]\nall_even = all(n % 2 == 0 for n in numbers)\nprint(\u0022All even:\u0022, all_even)"
+    },
+    {
+      "id": "b415800c-aa26-4b5c-86ec-4b04ae272a9b",
+      "type": "markdown",
+      "source": "## 30. How to get the last item of a list in Python?\n**Stack Overflow:** [View Post](https://stackoverflow.com/questions/9245459/how-to-get-the-last-item-of-a-list-in-python)\n**Problem:** The user wants to access the final element of a list efficiently.\n\n**Answer:** Use negative indexing \u0060list[-1]\u0060."
+    },
+    {
+      "id": "1ed43456-efb1-4f57-b3c3-4c522d8a97b6",
+      "type": "code",
+      "language": "python",
+      "source": "my_list = [10, 20, 30, 40]\nprint(my_list[-1])"
+    },
+    {
+      "id": "9b28f536-6667-46eb-bd85-4da2611a466c",
+      "type": "markdown",
+      "source": "## 31. Random string generation with upper-case letters and digits\n**Stack Overflow:** [View Post](https://stackoverflow.com/questions/2257441/random-string-generation-with-upper-case-letters-and-digits)\n\n**Problem:** The user wants to generate random alphanumeric tokens or strings.\n\n**Answer:** Combine \u0060random.choices\u0060 with \u0060string.ascii_letters\u0060 and \u0060string.digits\u0060."
+    },
+    {
+      "id": "803673c6-f07c-473e-8417-276e199d3080",
+      "type": "code",
+      "language": "python",
+      "source": "import random\nimport string\ntoken = \u0022\u0022.join(random.choices(string.ascii_letters \u002B string.digits, k=10))\nprint(token)"
+    },
+    {
+      "id": "d8c93b0e-63d4-4317-b26e-f006d16fb523",
+      "type": "markdown",
+      "source": "## 32. How do I remove duplicates from a list while preserving order?\n**Stack Overflow:** [View Post](https://stackoverflow.com/questions/480214/how-do-i-remove-duplicates-from-a-list-while-preserving-order)\n\n**Problem:** The user wants to strip duplicate entries from a list without scrambling the original item order.\n\n**Answer:** Use \u0060dict.fromkeys()\u0060 which preserves insertion order."
+    },
+    {
+      "id": "2cfba542-8e0a-4eb3-966e-e2f2ef6066ea",
+      "type": "code",
+      "language": "python",
+      "source": "duplicates = [1, 2, 2, 3, 1, 4]\nunique_list = list(dict.fromkeys(duplicates))\nprint(unique_list)"
+    },
+    {
+      "id": "46b0e4ac-d8fe-4f86-b976-9c8ea1ac5409",
+      "type": "markdown",
+      "source": "## 33. Python requests.get() returns status code and content\n**Stack Overflow:** [View Post](https://stackoverflow.com/questions/3040586/python-requests-get-returns-status-code-and-content)\n\n**Problem:** The user wants to make an HTTP GET request and verify status codes and content using \u0060requests\u0060.\n\n**Answer:** Call \u0060requests.get(url)\u0060 and check \u0060.status_code\u0060 and \u0060.text\u0060."
+    },
+    {
+      "id": "5d6a2464-78a9-49de-85af-bfd00ff5d963",
+      "type": "code",
+      "language": "python",
+      "source": "import requests\n# response = requests.get(\u0022https://api.github.com\u0022)\nprint(\u0022Requests library pattern documented.\u0022)"
+    },
+    {
+      "id": "87e4d9f4-0929-4b9f-a2d0-6be2afe5a9d0",
+      "type": "markdown",
+      "source": "## 34. Python catch multiple exceptions in one line\n**Stack Overflow:** [View Post](https://stackoverflow.com/questions/483666/python-catch-multiple-exceptions-in-one-line)\n\n**Problem:** The user wants to handle multiple distinct exception types with the same except block.\n\n**Answer:** Pass a tuple of exception classes to the \u0060except\u0060 statement."
+    },
+    {
+      "id": "4c87fbd2-8ad0-400b-ba91-6e4e54dcf9c3",
+      "type": "code",
+      "language": "python",
+      "source": "try:\n    val = int(\u0022not_an_int\u0022)\nexcept (ValueError, TypeError) as e:\n    print(\u0022Caught expected exception:\u0022, type(e).__name__)"
+    },
+    {
+      "id": "7c1d541c-6cb4-4107-bc29-ea3bc5c9ec7b",
+      "type": "markdown",
+      "source": "## 35. How can I profile a Python script?\n**Stack Overflow:** [View Post](https://stackoverflow.com/questions/582336/how-can-i-profile-a-python-script)\n\n**Problem:** The user wants to measure performance bottlenecks and function call times.\n\n**Answer:** Use Python\u0027s built-in \u0060cProfile\u0060 module."
+    },
+    {
+      "id": "af5fdca2-acca-47b9-9b1e-50098d762baf",
+      "type": "code",
+      "language": "python",
+      "source": "import cProfile\ncProfile.run(\u0022sum(range(10000))\u0022)"
+    },
+    {
+      "id": "1c704705-dbb1-492e-b833-1bc9db922299",
+      "type": "markdown",
+      "source": "## 36. How to check if a string starts or ends with a certain string in Python?\n**Stack Overflow:** [View Post](https://stackoverflow.com/questions/464864/how-to-check-if-a-string-starts-with-a-certain-string-in-python)\n\n**Problem:** The user wants to check string prefixes or suffixes.\n\n**Answer:** Use \u0060.startswith()\u0060 and \u0060.endswith()\u0060 methods."
+    },
+    {
+      "id": "d6be71fe-d48a-4948-a95c-46fd653c38a7",
+      "type": "code",
+      "language": "python",
+      "source": "filename = \u0022report.pdf\u0022\nprint(filename.startswith(\u0022rep\u0022))\nprint(filename.endswith(\u0022.pdf\u0022))"
+    },
+    {
+      "id": "a9ec2a0a-3e10-4f98-aad3-14aa041fa72e",
+      "type": "markdown",
+      "source": "## 37. How do I write to a file in Python?\n**Stack Overflow:** [View Post](https://stackoverflow.com/questions/3629812/how-do-i-write-to-a-file-in-python)\n**Problem:** The user wants to create and write text data into a file.\n\n**Answer:** Use \u0060open(filename, \u0022w\u0022)\u0060 or modern \u0060Path.write_text()\u0060."
+    },
+    {
+      "id": "96895fdd-730a-4dca-9433-4b961c2776de",
+      "type": "code",
+      "language": "python",
+      "source": "from pathlib import Path\nPath(\u0022test_output.txt\u0022).write_text(\u0022Hello, Stack Overflow!\u0022, encoding=\u0022utf-8\u0022)\nprint(\u0022File written successfully.\u0022)"
+    },
+    {
+      "id": "d21d10df-7838-4afa-a395-8be682acab87",
+      "type": "markdown",
+      "source": "## 38. How to install a package to a specific folder using pip?\n**Stack Overflow:** [View Post](https://stackoverflow.com/questions/13217646/how-to-install-a-package-to-a-specific-folder-using-pip)\n**Problem:** The user wants to install Python packages into a custom target directory rather than global site-packages.\n\n**Answer:** Use \u0060pip install --target=\u003Cpath\u003E \u003Cpackage\u003E\u0060."
+    },
+    {
+      "id": "c9b9fcd3-cb76-4dba-8271-eabf6a123daf",
+      "type": "code",
+      "language": "python",
+      "source": "# CLI command pattern:\n# pip install --target=./my_modules requests\nprint(\u0022Command: pip install --target=\u003Cdirectory\u003E \u003Cpackage\u003E\u0022)"
+    },
+    {
+      "id": "c17f1fdc-fde0-4116-8047-90c6df937c5f",
+      "type": "markdown",
+      "source": "## 39. How to access environment variables from Python?\n**Stack Overflow:** [View Post](https://stackoverflow.com/questions/4906977/how-access-environment-variables-from-python)\n**Problem:** The user wants to retrieve configuration or secrets from environment variables.\n\n**Answer:** Use \u0060os.environ\u0060 or \u0060os.getenv()\u0060."
+    },
+    {
+      "id": "b6179d36-f3de-425b-9166-de61df046685",
+      "type": "code",
+      "language": "python",
+      "source": "import os\ndb_host = os.getenv(\u0022DB_HOST\u0022, \u0022localhost\u0022)\nprint(\u0022Database Host:\u0022, db_host)"
+    },
+    {
+      "id": "7f5c8419-b038-43d3-89d2-f5215f04d9a8",
+      "type": "markdown",
+      "source": "## 40. How to create an empty dictionary in Python?\n**Stack Overflow:** [View Post](https://stackoverflow.com/questions/5341500/how-to-create-an-empty-dictionary-in-python)\n**Problem:** The user wants to initialize an empty dictionary data structure.\n\n**Answer:** Use curly braces \u0060{}\u0060 or \u0060dict()\u0060."
+    },
+    {
+      "id": "6002a7db-9fcf-43ef-a893-67ff923ea782",
+      "type": "code",
+      "language": "python",
+      "source": "empty_dict_1 = {}\nempty_dict_2 = dict()\nprint(type(empty_dict_1), type(empty_dict_2))"
+    }
+  ]
+}

@@ -1,0 +1,90 @@
+{
+  "verso": "1.1",
+  "metadata": {
+    "defaultKernel": "python",
+    "activeLayout": {
+      "extensionId": "verso.layout.notebook",
+      "layoutId": "notebook"
+    }
+  },
+  "cells": [
+    {
+      "id": "b0c99add-6e2d-4916-8f38-99d0a2a2def5",
+      "type": "markdown",
+      "source": "# Object Oriented Programming"
+    },
+    {
+      "id": "fbef198f-7f48-4b8e-b8cb-2aefc56fbf6f",
+      "type": "markdown",
+      "source": "\u003Cb\u003EWhat the hell is that?\u003Cbr\u003E\nWhy do I need it?\u003C/b\u003E"
+    },
+    {
+      "id": "789e9429-ae6e-4568-ba9a-aa8ae93254b7",
+      "type": "markdown",
+      "source": "Advantages of OOP\u003Cbr\u003E\n- provides a clear structure\u003Cbr\u003E\n- makes code easier zu maintainn, reuse and debug\u003Cbr\u003E\n- helps keep your code DRY (don\u0027t repeat yourself)\u003Cbr\u003E\n- allows you to build resuable applications with less code\u003Cbr\u003E"
+    },
+    {
+      "id": "c4d39a95-3d45-4519-a304-a5c34e509e16",
+      "type": "markdown",
+      "source": "# Classes and Objects"
+    },
+    {
+      "id": "2e9cbc57-29a5-44f5-9c63-a0a35f6c7568",
+      "type": "markdown",
+      "source": "A class defines what an object should look like. You can call it a blueprint. An object is created based on that class.\u003Cbr\u003E\u003Cbr\u003E\n\nClass   Objects\u003Cbr\u003E\nFruit   Apple, Banana, Mango"
+    },
+    {
+      "id": "0fabc208-48ec-4533-aead-e3a4b5a9e306",
+      "type": "code",
+      "language": "python",
+      "source": "# define a class\nclass Dog:\n    sound = \u0022bark\u0022\n\n# creating a object from class\ndog1 = Dog()\nprint(dog1.sound)",
+      "outputs": [
+        {
+          "mimeType": "text/plain",
+          "content": "bark\n",
+          "channel": "stdout"
+        }
+      ],
+      "metadata": {
+        "execution_count": 1
+      }
+    },
+    {
+      "id": "953ba7bb-afef-45d8-81af-47347719b9ec",
+      "type": "markdown",
+      "source": "__init__() method acts as a constructor"
+    },
+    {
+      "id": "dd1c0128-4863-4dc1-82f7-614c53ed9157",
+      "type": "code",
+      "language": "python",
+      "source": "class Dog:\n    species = \u0022Canine\u0022 # class attribute\n\n    def __init__(self,name, age):\n        self.name = name # instance attribute\n        self.age = age # instance attribute\n\n# creating an object of the dog class\ndog1 = Dog(\u0022Buddy\u0022, 3)\n\nprint(dog1.name)\nprint(dog1.species)",
+      "outputs": [
+        {
+          "mimeType": "text/plain",
+          "content": "Buddy\nCanine\n",
+          "channel": "stdout"
+        }
+      ],
+      "metadata": {
+        "execution_count": 3
+      }
+    },
+    {
+      "id": "d2bd670c-ab79-4c66-a9f9-6ae10a36ed57",
+      "type": "code",
+      "language": "python",
+      "source": "class Dog:\n    def __init__(self, name, age):\n        self.name = name\n        self.age = age\n\n    def __str__(self):\n        return f\u0022{self.name} is {self.age} years old.\u0022\n\ndog1 = Dog(\u0022Buddy\u0022, 3)\ndog2 = Dog(\u0022Charlie\u0022, 5)\n\nprint(dog1)\nprint(dog2)\n\n    ",
+      "outputs": [
+        {
+          "mimeType": "text/plain",
+          "content": "Buddy is 3 years old.\nCharlie is 5 years old.\n",
+          "channel": "stdout"
+        }
+      ],
+      "metadata": {
+        "execution_count": 4
+      }
+    }
+  ]
+}

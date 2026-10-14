@@ -1,0 +1,635 @@
+{
+  "verso": "1.1",
+  "metadata": {
+    "defaultKernel": "python",
+    "activeLayout": {
+      "extensionId": "verso.layout.notebook",
+      "layoutId": "notebook"
+    }
+  },
+  "cells": [
+    {
+      "id": "4ccaf9b6-078e-4848-bd9a-7531699e8828",
+      "type": "markdown",
+      "source": "\u003Cdiv align=\u0022center\u0022\u003E\n\n\u003Cimg src=\u0022https://www.python.org/static/community_logos/python-logo-generic.svg\u0022 alt=\u0022Python Logo\u0022 width=\u0022300\u0022/\u003E\n\n# Python Learning Book\n\n\u003C/div\u003E\n\n\u003Chr style=\u0022height:4px; border:none; background: linear-gradient(to right, #3776AB 50%, #FFD43B 50%);\u0022\u003E"
+    },
+    {
+      "id": "5b35fa94-5da5-4d9f-aa0a-ee01447b748f",
+      "type": "markdown",
+      "source": "Install python from https://www.python.org/"
+    },
+    {
+      "id": "2242c43b-5a4b-4cb2-bf69-3d81d0f0b9c4",
+      "type": "code",
+      "language": "python",
+      "source": "print(\u0022Welcome to the Python learning book\u0022)",
+      "outputs": [
+        {
+          "mimeType": "text/plain",
+          "content": "Welcome to the Python learning book\n",
+          "channel": "stdout"
+        }
+      ],
+      "metadata": {
+        "execution_count": 3
+      }
+    },
+    {
+      "id": "275ca1ed-b3ff-4c48-8c1b-49fa9dc70d69",
+      "type": "markdown",
+      "source": "Indentation in Python is very important.\u003Cbr\u003E\nThe two code example will show you."
+    },
+    {
+      "id": "3041d6bf-8072-4aa3-b6b8-c20b59f9892f",
+      "type": "code",
+      "language": "python",
+      "source": "if 10 \u003E 2:\n    print(\u0022Ten is greater than two\u0022)",
+      "outputs": [
+        {
+          "mimeType": "text/plain",
+          "content": "Ten is greater than two\n",
+          "channel": "stdout"
+        }
+      ],
+      "metadata": {
+        "execution_count": 5
+      }
+    },
+    {
+      "id": "d2c1b8a5-97d2-41d8-bf07-fd89cde320c9",
+      "type": "code",
+      "language": "python",
+      "source": "if 10 \u003E 2:\nprint(\u0022Ten is greater than two\u0022)",
+      "outputs": [
+        {
+          "mimeType": "text/plain",
+          "content": "IndentationError: expected an indented block after \u0027if\u0027 statement on line 1 (111631573.py, line 2)\r\n  \u001B[36mCell\u001B[39m\u001B[36m \u001B[39m\u001B[32mIn[6]\u001B[39m\u001B[32m, line 2\u001B[39m\n\u001B[31m    \u001B[39m\u001B[31mprint(\u0022Ten is greater than two\u0022)\u001B[39m\n    ^\n\u001B[31mIndentationError\u001B[39m\u001B[31m:\u001B[39m expected an indented block after \u0027if\u0027 statement on line 1\n",
+          "isError": true,
+          "errorName": "IndentationError",
+          "errorStackTrace": "  \u001B[36mCell\u001B[39m\u001B[36m \u001B[39m\u001B[32mIn[6]\u001B[39m\u001B[32m, line 2\u001B[39m\n\u001B[31m    \u001B[39m\u001B[31mprint(\u0022Ten is greater than two\u0022)\u001B[39m\n    ^\n\u001B[31mIndentationError\u001B[39m\u001B[31m:\u001B[39m expected an indented block after \u0027if\u0027 statement on line 1\n"
+        }
+      ],
+      "metadata": {
+        "execution_count": 6
+      }
+    },
+    {
+      "id": "01c7674c-ef05-4809-97b9-25d89a3b6b34",
+      "type": "markdown",
+      "source": "In Python you don\u0027t need a \u0060;\u0060\n\nSo say goodbye to the semicolon for now."
+    },
+    {
+      "id": "013cb37d-bcdb-46c3-b8cb-5522dce992dd",
+      "type": "markdown",
+      "source": "#### Output in Python\n\nYou can use \u0060\u0022\u0060 or \u0060\u0027\u0060"
+    },
+    {
+      "id": "419f00f3-42be-4379-aed6-b862af99f524",
+      "type": "code",
+      "language": "python",
+      "source": "print(\u0022Hello World\u0022)\nprint(\u0027I am learning Python\u0027)"
+    },
+    {
+      "id": "ab84d564-3ce7-4b08-bd5b-54475eece5bf",
+      "type": "code",
+      "language": "python",
+      "source": "# This is a comment"
+    },
+    {
+      "id": "1ffab16d-9af5-4e43-bdd1-1da1dd7abdaa",
+      "type": "markdown",
+      "source": "Comments start with \u0060#\u0060 and are ignored by Python \u2014 use them to explain *why* code does something, not to restate *what* it does. For multi-line comments, either prefix every line with \u0060#\u0060, or (less idiomatically) use a triple-quoted string that isn\u0027t assigned to anything."
+    },
+    {
+      "id": "662424bb-ba3b-4b9e-b3cb-2683ffd9a82a",
+      "type": "markdown",
+      "source": "\u003Chr style=\u0022height:4px; border:none; background: linear-gradient(to right, #3776AB 50%, #FFD43B 50%);\u0022\u003E"
+    },
+    {
+      "id": "a609f7a1-fe09-471b-ada3-35acc4b00c23",
+      "type": "markdown",
+      "source": "#### Variable Names\n\nA variable can have a short name (like \u0060x\u0060 and \u0060y\u0060) or a more descriptive name (\u0060age\u0060, \u0060carname\u0060, \u0060total_volume\u0060).\n\nRules for variable names:\n- Must start with a letter or the underscore character\n- Cannot start with a number\n- Variable names are case-sensitive\n- Cannot be any of the Python keywords"
+    },
+    {
+      "id": "c0981fd6-6e09-438b-9f9e-82fa44da684b",
+      "type": "code",
+      "language": "python",
+      "source": "myvar = \u0022Jane\u0022\nmy_var = \u0022Jane\u0022\n_my_var = \u0022Jane\u0022\nmyVar = \u0022Jane\u0022\nMYVAR = \u0022Jane\u0022\nmyvar2 = \u0022Jane\u0022"
+    },
+    {
+      "id": "694bf08d-8321-4e6c-af69-c9fcfb72c2c4",
+      "type": "markdown",
+      "source": "#### Variables and Types\u003Cbr\u003E\nPython is a **dynamically typed** language: you don\u0027t need to declare a variable\u0027s type before using it, and a variable can be reassigned to a different type later. Python figures out the type automatically at runtime.\u003Cbr\u003E\nSeparately, Python is also **object-oriented**: every value you create \u2014 even a simple number or string \u2014 is internally represented as an object. These are two different concepts, but they\u0027re often mentioned together because both mean you rarely have to think about low-level type declarations."
+    },
+    {
+      "id": "beb291d7-9d7a-49de-a6bb-940398baef87",
+      "type": "code",
+      "language": "python",
+      "source": "x = \u0022Python is awesome\u0022\nprint(x)"
+    },
+    {
+      "id": "98bee786-33f4-45b2-aee6-8a9f917ede2c",
+      "type": "markdown",
+      "source": "#### Python Data Types"
+    },
+    {
+      "id": "d49ac679-e0cf-494a-95d8-8ffe0ec03bba",
+      "type": "markdown",
+      "source": "#### Data Types\n\n| Category | Types |\n|---|---|\n| Text Type | \u0060str\u0060 |\n| Numeric Types | \u0060int\u0060, \u0060float\u0060, \u0060complex\u0060 |\n| Sequence Types | \u0060list\u0060, \u0060tuple\u0060, \u0060range\u0060 |\n| Mapping Type | \u0060dict\u0060 |\n| Set Types | \u0060set\u0060, \u0060frozenset\u0060 |\n| Boolean Type | \u0060bool\u0060 |\n| Binary Types | \u0060bytes\u0060, \u0060bytearray\u0060, \u0060memoryview\u0060 |\n| None Type | \u0060NoneType\u0060 |"
+    },
+    {
+      "id": "46e23b73-c087-4a64-ac2d-879b560d7f93",
+      "type": "code",
+      "language": "python",
+      "source": "# Text Type\nx = \u0022Hello World\u0022\n\n# Numeric Types\nx = 20          # int\nx = 20.5        # float\nx = 1j          # complex\n\n# Sequence Types\nx = [\u0022apple\u0022, \u0022banana\u0022, \u0022cherry\u0022]   # list\nx = (\u0022apple\u0022, \u0022banana\u0022, \u0022cherry\u0022)   # tuple\nx = range(6)                        # range\n\n# Mapping Type\nx = {\u0022name\u0022: \u0022John\u0022, \u0022age\u0022: 36}     # dict\n\n# Set Types\nx = {\u0022apple\u0022, \u0022banana\u0022, \u0022cherry\u0022}            # set\nx = frozenset({\u0022apple\u0022, \u0022banana\u0022, \u0022cherry\u0022}) # frozenset\n\n# Boolean Type\nx = True\n\n# Binary Types\nx = b\u0022Hello\u0022                  # bytes\nx = bytearray(5)              # bytearray\nx = memoryview(bytes(5))      # memoryview\n\n# None Type\nx = None"
+    },
+    {
+      "id": "af3c641e-42f0-4ec3-ba39-fe1c7b98ac74",
+      "type": "markdown",
+      "source": "### Python Strings"
+    },
+    {
+      "id": "321d62f7-dbf6-4087-b314-edbce778e3f1",
+      "type": "markdown",
+      "source": "#### Multiline Strings"
+    },
+    {
+      "id": "7e331680-4407-4b26-a2bf-1153dbb9f90a",
+      "type": "code",
+      "language": "python",
+      "source": "a = \u0022\u0022\u0022Lorem ipsum dolor sit amet,\nconsectetur adipiscing elit,\nsed do eiusmod tempor incididunt\nut labore et dolore magna aliqua.\u0022\u0022\u0022\nprint(a)"
+    },
+    {
+      "id": "95b029fc-d85c-4590-b80c-f6b70872fe6d",
+      "type": "markdown",
+      "source": "#### Slicing Strings"
+    },
+    {
+      "id": "e96127c6-c753-41ab-a5f6-1b0f0777a7aa",
+      "type": "code",
+      "language": "python",
+      "source": "# get the characters from position 2 to position 5\nb = \u0022Hello World!\u0022\nprint(b[2:5])"
+    },
+    {
+      "id": "ce4dc08a-8775-40ab-92d2-88790a82fe23",
+      "type": "markdown",
+      "source": "#### Modify Strings"
+    },
+    {
+      "id": "5ce1d5fa-8e73-4d8c-b355-36663d5958bf",
+      "type": "code",
+      "language": "python",
+      "source": "# upper() method returns string in upper case\na = \u0022Hello World!\u0022\nprint(a.upper())"
+    },
+    {
+      "id": "4f406272-5979-40da-9c77-d59682bef9c2",
+      "type": "code",
+      "language": "python",
+      "source": "# lower()\na = \u0022Hello World\u0022\nprint(a.lower())"
+    },
+    {
+      "id": "4afaf159-c95b-489d-84d1-90c7d0dd1eb8",
+      "type": "code",
+      "language": "python",
+      "source": "# strip()\n# removes any whitespace\na = \u0022 Hello World! \u0022\nprint(a.strip())"
+    },
+    {
+      "id": "04b63b54-0794-4e39-8ada-2ab183cca3a9",
+      "type": "code",
+      "language": "python",
+      "source": "# replace()\n# replaces a string with another string\na = \u0022Hello World!\u0022\nprint(a.replace(\u0022H\u0022, \u0022X\u0022))"
+    },
+    {
+      "id": "bb9870c3-e44a-430c-96e9-d40dd3df5a67",
+      "type": "code",
+      "language": "python",
+      "source": "# split()\n# method splits the string into substrings\na = \u0022Hello, World!\u0022\nprint(a.split(\u0027,\u0027))"
+    },
+    {
+      "id": "0e4328ef-cc6f-4f6b-90f8-fb1b6c6d3560",
+      "type": "markdown",
+      "source": "#### String Concatennation"
+    },
+    {
+      "id": "1ea9bd2f-0495-4200-a902-8913873a8662",
+      "type": "code",
+      "language": "python",
+      "source": "a = \u0022Hello\u0022\nb = \u0022World\u0022\nc = a \u002B b\nprint(c)"
+    },
+    {
+      "id": "04c52612-4578-4180-aab1-785e8a1e1a4b",
+      "type": "code",
+      "language": "python",
+      "source": "a = \u0022Hello\u0022\nb = \u0022World\u0022\nc = a \u002B \u0022 \u0022 \u002B b\nprint(c)"
+    },
+    {
+      "id": "989f56e9-ba87-43e6-aab5-a84029f37d81",
+      "type": "markdown",
+      "source": "#### F-Strings"
+    },
+    {
+      "id": "c42d0c5f-f92c-4e7b-8ae8-636db6b422c3",
+      "type": "code",
+      "language": "python",
+      "source": "age = 41\ntxt = f\u0022My name is Jane, I am {age}\u0022\nprint(txt)"
+    },
+    {
+      "id": "46c0d795-cc1f-4fc7-ab4c-b79a9b1ee341",
+      "type": "markdown",
+      "source": "#### Escape Characters\n\n| Code | Result |\n|---|---|\n| \u0060\\\u0027\u0060 | Single Quote |\n| \u0060\\\\\u0060 | Backslash |\n| \u0060\\n\u0060 | New Line |\n| \u0060\\r\u0060 | Carriage Return |\n| \u0060\\t\u0060 | Tab |\n| \u0060\\b\u0060 | Backspace |\n| \u0060\\f\u0060 | Form Feed |\n| \u0060\\ooo\u0060 | Octal value |\n| \u0060\\xhh\u0060 | Hex value |"
+    },
+    {
+      "id": "48a83716-74ff-48eb-badc-48a713b16157",
+      "type": "markdown",
+      "source": "#### Python Booleans"
+    },
+    {
+      "id": "36a5a616-57f4-4c19-9f24-6038357379af",
+      "type": "code",
+      "language": "python",
+      "source": "# booleans are either \u0027True\u0027 or \u0027False\u0027\n\na = 100\nb = 11\n\nif b \u003E a:\n    print(\u0022b is greater than a\u0022)\nelse:\n    print(\u0022b is not greater than a\u0022)"
+    },
+    {
+      "id": "83c3a87f-ad15-459a-8556-6824b550e4fc",
+      "type": "markdown",
+      "source": "#### Python Operators"
+    },
+    {
+      "id": "96120746-9991-4f00-a158-b7aa6e2b1495",
+      "type": "markdown",
+      "source": "#### Arithmetic Operators\n\n| Operator | Name | Example |\n|---|---|---|\n| \u0060\u002B\u0060 | Addition | \u0060x \u002B y\u0060 |\n| \u0060-\u0060 | Subtraction | \u0060x - y\u0060 |\n| \u0060*\u0060 | Multiplication | \u0060x * y\u0060 |\n| \u0060/\u0060 | Division | \u0060x / y\u0060 |\n| \u0060%\u0060 | Modulus | \u0060x % y\u0060 |\n| \u0060**\u0060 | Exponentiation | \u0060x ** y\u0060 |\n| \u0060//\u0060 | Floor division | \u0060x // y\u0060 |"
+    },
+    {
+      "id": "d44be197-1a6a-4c46-b023-fb98c9a8fa3b",
+      "type": "code",
+      "language": "python",
+      "source": "x = 10\ny = 3\n\nprint(x \u002B y)   # Addition -\u003E 13\nprint(x - y)   # Subtraction -\u003E 7\nprint(x * y)   # Multiplication -\u003E 30\nprint(x / y)   # Division -\u003E 3.3333333333333335\nprint(x % y)   # Modulus -\u003E 1\nprint(x ** y)  # Exponentiation -\u003E 1000\nprint(x // y)  # Floor division -\u003E 3"
+    },
+    {
+      "id": "d3879705-8111-4f04-84ba-a60482500e51",
+      "type": "markdown",
+      "source": "#### Assignment Operators\n\nAssignment operators are used to assign values to variables.\n\n| Operator | Example | Same As |\n|---|---|---|\n| \u0060=\u0060 | \u0060x = 5\u0060 | \u0060x = 5\u0060 |\n| \u0060\u002B=\u0060 | \u0060x \u002B= 3\u0060 | \u0060x = x \u002B 3\u0060 |\n| \u0060-=\u0060 | \u0060x -= 3\u0060 | \u0060x = x - 3\u0060 |\n| \u0060*=\u0060 | \u0060x *= 3\u0060 | \u0060x = x * 3\u0060 |\n| \u0060/=\u0060 | \u0060x /= 3\u0060 | \u0060x = x / 3\u0060 |\n| \u0060%=\u0060 | \u0060x %= 3\u0060 | \u0060x = x % 3\u0060 |\n| \u0060//=\u0060 | \u0060x //= 3\u0060 | \u0060x = x // 3\u0060 |\n| \u0060**=\u0060 | \u0060x **= 3\u0060 | \u0060x = x ** 3\u0060 |\n| \u0060\u0026=\u0060 | \u0060x \u0026= 3\u0060 | \u0060x = x \u0026 3\u0060 |\n| \u0060\\|=\u0060 | \u0060x \\|= 3\u0060 | \u0060x = x \\| 3\u0060 |\n| \u0060^=\u0060 | \u0060x ^= 3\u0060 | \u0060x = x ^ 3\u0060 |\n| \u0060\u003E\u003E=\u0060 | \u0060x \u003E\u003E= 3\u0060 | \u0060x = x \u003E\u003E 3\u0060 |\n| \u0060\u003C\u003C=\u0060 | \u0060x \u003C\u003C= 3\u0060 | \u0060x = x \u003C\u003C 3\u0060 |\n| \u0060:=\u0060 | \u0060print(x := 3)\u0060 | \u0060x = 3\u0060\u003Cbr\u003E\u0060print(x)\u0060 |"
+    },
+    {
+      "id": "25593763-f982-4832-924b-8cb5f4f536b6",
+      "type": "code",
+      "language": "python",
+      "source": "# Basic Assignment\nx = 5\nprint(x)        # 5\n\n# Addition Assignment\nx = 5\nx \u002B= 3\nprint(x)        # 8\n\n# Subtraction Assignment\nx = 5\nx -= 3\nprint(x)        # 2\n\n# Multiplication Assignment\nx = 5\nx *= 3\nprint(x)        # 15\n\n# Division Assignment\nx = 5\nx /= 3\nprint(x)        # 1.6666666666666667\n\n# Modulus Assignment\nx = 5\nx %= 3\nprint(x)        # 2\n\n# Floor Division Assignment\nx = 5\nx //= 3\nprint(x)        # 1\n\n# Exponentiation Assignment\nx = 5\nx **= 3\nprint(x)        # 125\n\n# Bitwise AND Assignment\nx = 5\nx \u0026= 3\nprint(x)        # 1\n\n# Bitwise OR Assignment\nx = 5\nx |= 3\nprint(x)        # 7\n\n# Bitwise XOR Assignment\nx = 5\nx ^= 3\nprint(x)        # 6\n\n# Bitwise Right Shift Assignment\nx = 5\nx \u003E\u003E= 3\nprint(x)        # 0\n\n# Bitwise Left Shift Assignment\nx = 5\nx \u003C\u003C= 3\nprint(x)        # 40\n\n# Walrus Operator (assign and return in one step)\nprint(x := 3)   # 3\nprint(x)        # 3"
+    },
+    {
+      "id": "46cbbdc0-e3b7-42e0-a685-8450caa1cd82",
+      "type": "markdown",
+      "source": "#### Ternary Operator\n\nA one-line shorthand for an \u0060if-else\u0060 statement.\n\n| Syntax | Example |\n|---|---|\n| \u0060x if condition else y\u0060 | \u0060\u0022Yes\u0022 if a \u003E b else \u0022No\u0022\u0060 |"
+    },
+    {
+      "id": "40858f75-06cc-4735-b3d9-17a01f733273",
+      "type": "code",
+      "language": "python",
+      "source": "a = 330\nb = 200\nprint(\u0022A\u0022) if a \u003E b else print(\u0022B\u0022)   # A\n\n# Common use: assign a value conditionally\nresult = \u0022Even\u0022 if a % 2 == 0 else \u0022Odd\u0022\nprint(result)   # Even"
+    },
+    {
+      "id": "1849cc01-659c-486f-8476-48e2abc284fd",
+      "type": "markdown",
+      "source": "#### Comparison Operators\n\nUsed to compare two values.\n\n| Operator | Name | Example |\n|---|---|---|\n| \u0060==\u0060 | Equal | \u0060x == y\u0060 |\n| \u0060!=\u0060 | Not equal | \u0060x != y\u0060 |\n| \u0060\u003E\u0060 | Greater than | \u0060x \u003E y\u0060 |\n| \u0060\u003C\u0060 | Less than | \u0060x \u003C y\u0060 |\n| \u0060\u003E=\u0060 | Greater than or equal to | \u0060x \u003E= y\u0060 |\n| \u0060\u003C=\u0060 | Less than or equal to | \u0060x \u003C= y\u0060 |"
+    },
+    {
+      "id": "a44bf1d5-d3b2-4d0a-80ad-62f4eeb3ea25",
+      "type": "code",
+      "language": "python",
+      "source": "x = 5\ny = 3\n\nprint(x == y)   # False\nprint(x != y)   # True\nprint(x \u003E y)    # True\nprint(x \u003C y)    # False\nprint(x \u003E= y)   # True\nprint(x \u003C= y)   # False"
+    },
+    {
+      "id": "4b7dbd99-ee5b-44e8-9f60-4e8dc3ec49a6",
+      "type": "markdown",
+      "source": "#### Logical Operators\n\nUsed to combine conditional statements.\n\n| Operator | Description | Example |\n|---|---|---|\n| \u0060and\u0060 | True if both statements are true | \u0060x \u003C 5 and x \u003C 10\u0060 |\n| \u0060or\u0060 | True if at least one statement is true | \u0060x \u003C 5 or x \u003C 4\u0060 |\n| \u0060not\u0060 | Reverses the result | \u0060not(x \u003C 5 and x \u003C 10)\u0060 |"
+    },
+    {
+      "id": "6ac61acd-8411-488a-aa85-268633676625",
+      "type": "code",
+      "language": "python",
+      "source": "x = 5\n\nprint(x \u003C 10 and x \u003E 0)       # True\nprint(x \u003C 4 or x \u003E 3)         # True\nprint(not(x \u003C 10 and x \u003E 0))  # False"
+    },
+    {
+      "id": "4ea06315-d1a9-40d9-bf35-8d1f09055663",
+      "type": "markdown",
+      "source": "\u003Chr style=\u0022height:4px; border:none; background: linear-gradient(to right, #3776AB 50%, #FFD43B 50%);\u0022\u003E"
+    },
+    {
+      "id": "0702183c-91a2-4280-a6d1-1e8e2307378d",
+      "type": "markdown",
+      "source": "## Python Collections"
+    },
+    {
+      "id": "747a85e9-4e67-45fb-b64f-5493f6d5b0be",
+      "type": "markdown",
+      "source": "\u003Cb\u003EList\u003C/b\u003E is a collection which is ordered and changeable. Allows duplicate members\u003Cbr\u003E\n\u003Cb\u003ETuple\u003C/b\u003E is a collection which is ordered and unchangeable. Allows duplicate members.\u003Cbr\u003E\n\u003Cb\u003ESet\u003C/b\u003E is a collection which is unordered, unchangeable, and unindexed. No duplicate members\u003Cbr\u003E\n\u003Cb\u003EDictionary\u003C/b\u003E is a collection which is ordered andd changeable. No duplicate members."
+    },
+    {
+      "id": "af5954b8-8f90-4f69-9a8b-aca12a038fa4",
+      "type": "markdown",
+      "source": "#### Python Lists"
+    },
+    {
+      "id": "aa8fc068-be0d-47e2-b968-77f5b22a853d",
+      "type": "code",
+      "language": "python",
+      "source": "# list items are ordered, changeable and allow duplicated values\nmylist = [\u0022apple\u0022, \u0022banana\u0022, \u0022cherry\u0022]\nprint(mylist)"
+    },
+    {
+      "id": "c23a636a-923e-4142-9212-5eeb9a38db44",
+      "type": "markdown",
+      "source": "#### Python Tuple"
+    },
+    {
+      "id": "f78ded35-713a-44ad-a64c-d6e99d657f60",
+      "type": "code",
+      "language": "python",
+      "source": "# tuple\n# are used to store multiple items in a single variable\n# ordered and unchangeable\nmytuple = (\u0022apple\u0022, \u0022banana\u0022, \u0022cherry\u0022, \u0022banana\u0022)\nprint(mytuple)"
+    },
+    {
+      "id": "dafe875c-4b85-4e63-bda1-4ac5132e7b65",
+      "type": "markdown",
+      "source": "ordered, unchangeable and allow duplicate\u003Cbr\u003E\nordered, items have defined order and the order will not change\u003Cbr\u003E\nunchangeable, cannot change, add or remove items after the tuple has been created"
+    },
+    {
+      "id": "bb215a6d-7cb6-40e2-a263-6b2d6abf3ca0",
+      "type": "markdown",
+      "source": "#### Python Set"
+    },
+    {
+      "id": "2e46c0fc-8ab2-4fa2-b2bc-b6f0a50d2f60",
+      "type": "code",
+      "language": "python",
+      "source": "# sets\n# a collection which is unordered, unchangeable, and unindexed\nmyset = {\u0022apple\u0022, \u0022banana\u0022, \u0022cherry\u0022}\nprint(myset)"
+    },
+    {
+      "id": "e3d72e9e-d350-40d0-b60c-484e69782cc2",
+      "type": "markdown",
+      "source": "unordered\u003Cbr\u003E\nset items can appear in a different order every time you use them, and cannot be referred to by index or key\u003Cbr\u003E\nunchangeable\u003Cbr\u003E\nset items are unchangeable, meaning that we cannot change the items after the set has been created"
+    },
+    {
+      "id": "c646cadb-787b-4580-a162-13fd05d91571",
+      "type": "markdown",
+      "source": "#### Python Dictionaries"
+    },
+    {
+      "id": "266840e8-4eb0-4559-8f12-24c46fba873e",
+      "type": "code",
+      "language": "python",
+      "source": "thisdict = {\n    \u0022brand\u0022: \u0022Ford\u0022,\n    \u0022model\u0022: \u0022Mustang\u0022,\n    \u0022year\u0022: 1964\n}\nprint(thisdict)"
+    },
+    {
+      "id": "ba146299-8691-4a4f-9b01-77c3f7664d28",
+      "type": "markdown",
+      "source": "#### Python Conditions and If statements"
+    },
+    {
+      "id": "783fc7bb-d712-4704-bc3b-66f1da867285",
+      "type": "code",
+      "language": "python",
+      "source": "a = 33\nb = 200\nif b \u003E a:\n    print(\u0022b is greater than a\u0022)"
+    },
+    {
+      "id": "21f9503d-da92-4104-bca4-b84da6773aca",
+      "type": "markdown",
+      "source": "If the condition is true, the code block inside the if statement is executed. If the condition is false, the code block is skipped."
+    },
+    {
+      "id": "67a2849c-d3fa-4e3a-9819-4b1bf5ebec66",
+      "type": "code",
+      "language": "python",
+      "source": "# elif\n# if the previous conditions were not true, then try this condition\na = 33\nb = 33\nif b \u003E a:\n    print(\u0022b is greater than a\u0022)\nelif a == b:\n    print(\u0022a and b are equal\u0022)"
+    },
+    {
+      "id": "700baa2c-0f09-4f1a-a1d8-89281b537890",
+      "type": "code",
+      "language": "python",
+      "source": "a = 200\nb = 33\nif b \u003E a:\n    print(\u0022b is greater than a\u0022)\nelif a == b:\n    print(\u0022a and b are equal\u0022)\nelse:\n    print(\u0022a is greater than b\u0022)"
+    },
+    {
+      "id": "766a31f9-7492-46cc-8090-a65cc15718ed",
+      "type": "markdown",
+      "source": "# Python loops"
+    },
+    {
+      "id": "de48ffd8-81f7-4aef-887e-563bb3ee8223",
+      "type": "markdown",
+      "source": "python has two loops, \u0060while\u0060 and \u0060for\u0060 loops"
+    },
+    {
+      "id": "e394b6e9-fde2-41b8-bbf2-50afab16f66c",
+      "type": "markdown",
+      "source": "#### while loop"
+    },
+    {
+      "id": "f2421e26-b27f-4dd4-baf5-490ec8a4a8a8",
+      "type": "code",
+      "language": "python",
+      "source": "# print i as long as i is less than 6\ni = 1\nwhile i \u003C 6:\n    print(i)\n    i \u002B= 1",
+      "outputs": [
+        {
+          "mimeType": "text/plain",
+          "content": "1\n2\n3\n4\n5\n",
+          "channel": "stdout"
+        }
+      ],
+      "metadata": {
+        "execution_count": 51
+      }
+    },
+    {
+      "id": "090216fd-d4c2-4bc3-883e-2c84120bfb3e",
+      "type": "markdown",
+      "source": "with the \u0060break\u0060 statement we can stop the loop"
+    },
+    {
+      "id": "856a4e09-80f6-4bcb-b7f0-bdf65efdb2b9",
+      "type": "code",
+      "language": "python",
+      "source": "i = 1\nwhile i \u003C 6:\n  print(i)\n  if (i == 3):\n    break\n  i \u002B= 1",
+      "outputs": [
+        {
+          "mimeType": "text/plain",
+          "content": "1\n2\n3\n",
+          "channel": "stdout"
+        }
+      ],
+      "metadata": {
+        "execution_count": 54
+      }
+    },
+    {
+      "id": "450705ba-c611-4e92-9fb1-dfb6f890dcfc",
+      "type": "markdown",
+      "source": "with \u0060continue\u0060 we can stop the curret iteration"
+    },
+    {
+      "id": "25f2820e-abc1-4908-a3ce-ed47f3a1c2ae",
+      "type": "code",
+      "language": "python",
+      "source": "i = 0\nwhile i \u003C 6:\n  i \u002B= 1\n  if i == 3:\n    continue\n  print(i)",
+      "outputs": [
+        {
+          "mimeType": "text/plain",
+          "content": "1\n2\n4\n5\n6\n",
+          "channel": "stdout"
+        }
+      ],
+      "metadata": {
+        "execution_count": 59
+      }
+    },
+    {
+      "id": "e4cb99b1-9b26-4a2b-bf31-e6f78e000339",
+      "type": "markdown",
+      "source": "with else we can run a block of code once when the condition is no longer true"
+    },
+    {
+      "id": "44850d33-a0c9-45f0-acb9-4d1fb5407485",
+      "type": "code",
+      "language": "python",
+      "source": "i = 1\nwhile i \u003C 6:\n  print(i)\n  i \u002B= 1\nelse:\n  print(\u0022i is no longer less than 6\u0022)",
+      "outputs": [
+        {
+          "mimeType": "text/plain",
+          "content": "1\n2\n3\n4\n5\ni is no longer less than 6\n",
+          "channel": "stdout"
+        }
+      ],
+      "metadata": {
+        "execution_count": 64
+      }
+    },
+    {
+      "id": "1fcea84d-4c91-4682-9289-a057b992bd21",
+      "type": "markdown",
+      "source": "#### for loop"
+    },
+    {
+      "id": "85fa657a-0f23-4616-8388-b985964d3a36",
+      "type": "markdown",
+      "source": "a \u0060for\u0060 loop is used to iterate over a sequence\u003Cbr\u003E\nthat can be a list, a tuple, a dictionary, a set or a string"
+    },
+    {
+      "id": "e3e60efb-1707-4a7b-997f-3012dea260dd",
+      "type": "code",
+      "language": "python",
+      "source": "fruits = [\u0022apple\u0022, \u0022banana\u0022, \u0022cherry\u0022]\nfor x in fruits:\n  print(x) ",
+      "outputs": [
+        {
+          "mimeType": "text/plain",
+          "content": "apple\nbanana\ncherry\n",
+          "channel": "stdout"
+        }
+      ],
+      "metadata": {
+        "execution_count": 73
+      }
+    },
+    {
+      "id": "d7fc170a-6f8b-4200-8f63-d4f0e9c7fa45",
+      "type": "markdown",
+      "source": "the \u0060break\u0060 statemet can stop the loop before it has looped through all the items"
+    },
+    {
+      "id": "b41ea6d1-b878-4b02-ac9e-b390146d7946",
+      "type": "code",
+      "language": "python",
+      "source": "fruits = [\u0022apple\u0022, \u0022banana\u0022, \u0022cherry\u0022]\nfor x in fruits:\n  print(x)\n  if x == \u0022banana\u0022:\n    break",
+      "outputs": [
+        {
+          "mimeType": "text/plain",
+          "content": "apple\nbanana\n",
+          "channel": "stdout"
+        }
+      ],
+      "metadata": {
+        "execution_count": 77
+      }
+    },
+    {
+      "id": "b1fa21c3-fafa-40f1-9580-3267b24e4d44",
+      "type": "markdown",
+      "source": "with \u0060continue\u0060 we stop the current iteration and continue with the next"
+    },
+    {
+      "id": "598c3538-180d-4b13-9277-61d1b7cd4b65",
+      "type": "code",
+      "language": "python",
+      "source": "fruits = [\u0022apple\u0022, \u0022banana\u0022, \u0022cherry\u0022]\nfor x in fruits:\n  if x == \u0022banana\u0022:\n    continue\n  print(x)",
+      "outputs": [
+        {
+          "mimeType": "text/plain",
+          "content": "apple\ncherry\n",
+          "channel": "stdout"
+        }
+      ],
+      "metadata": {
+        "execution_count": 80
+      }
+    },
+    {
+      "id": "30556313-e087-42bc-be56-3e8385e559c5",
+      "type": "markdown",
+      "source": "the \u0060range()\u0060 function returs a sequennce of numbers, starting from 0 by default, and increments by 1 and eds at a specified number"
+    },
+    {
+      "id": "6c0a6095-67b9-4cde-b47f-7fc4f26ffd98",
+      "type": "code",
+      "language": "python",
+      "source": "for x in range(6):\n  print(x)",
+      "outputs": [
+        {
+          "mimeType": "text/plain",
+          "content": "0\n1\n2\n3\n4\n5\n",
+          "channel": "stdout"
+        }
+      ],
+      "metadata": {
+        "execution_count": 82
+      }
+    },
+    {
+      "id": "848b29d4-b95d-47bb-bf30-f68c0df08a0f",
+      "type": "markdown",
+      "source": "# python functions"
+    },
+    {
+      "id": "8f1a0afa-602e-4133-bbfa-c1ce827740a5",
+      "type": "markdown",
+      "source": "a function is a block of code which only runs when it is called"
+    },
+    {
+      "id": "d8480e09-faf0-487d-b8a9-c9c8e0a0c147",
+      "type": "code",
+      "language": "python",
+      "source": "def myFunction():\n    print(\u0022I am a function\u0022)\n\nmyFunction()",
+      "outputs": [
+        {
+          "mimeType": "text/plain",
+          "content": "I am a function\n",
+          "channel": "stdout"
+        }
+      ],
+      "metadata": {
+        "execution_count": 92
+      }
+    },
+    {
+      "id": "d14cc904-2afb-4138-8500-94ff4faa84fe",
+      "type": "code",
+      "language": "python",
+      "source": "# the pass statement is a function placeholder\ndef myFunction():\n    pass"
+    },
+    {
+      "id": "e5235505-441d-4f47-8c5a-d1cdf6810b82",
+      "type": "markdown",
+      "source": "more to come.."
+    },
+    {
+      "id": "9f08eeaf-581f-4709-9ced-c1c6fcb9679e",
+      "type": "markdown",
+      "source": "\u003Chr style=\u0022height:4px; border:none; background: linear-gradient(to right, #3776AB 50%, #FFD43B 50%);\u0022\u003E\n\nThat covers the fundamentals: syntax, variables, data types, strings, operators, collections, and conditionals."
+    }
+  ]
+}

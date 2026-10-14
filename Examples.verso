@@ -1,0 +1,23 @@
+{
+  "verso": "1.1",
+  "metadata": {
+    "defaultKernel": "python",
+    "activeLayout": {
+      "extensionId": "verso.layout.notebook",
+      "layoutId": "notebook"
+    }
+  },
+  "cells": [
+    {
+      "id": "4ec2bc25-54f6-4953-b58e-2add965f6723",
+      "type": "markdown",
+      "source": "#### Calculator"
+    },
+    {
+      "id": "57473ac0-0b88-4568-b685-ec65b5efe1f5",
+      "type": "code",
+      "language": "python",
+      "source": "def calculate(num1, num2, op):\n    if op == \u0022\u002B\u0022:\n        return num1 \u002B num2\n    elif op == \u0022-\u0022:\n        return num1 - num2\n    elif op == \u0022*\u0022:\n        return num1 * num2\n    elif op == \u0022/\u0022:\n        if num2 == 0:\n            return \u0022Error: Division by zero\u0022\n        return num1 / num2\n    else:\n        return \u0022Invalid operator\u0022\n\nwhile True:\n    num1 = float(input(\u0022Enter first number: \u0022))\n    op = input(\u0022Enter operator (\u002B, -, *, /): \u0022)\n    num2 = float(input(\u0022Enter second number: \u0022))\n\n    result = calculate(num1, num2, op)\n    print(\u0022Result:\u0022, result)\n\n    again = input(\u0022Calculate again? (y/n): \u0022)\n    if again.lower() != \u0022y\u0022:\n        break"
+    }
+  ]
+}

@@ -1,0 +1,237 @@
+{
+  "verso": "1.1",
+  "metadata": {
+    "defaultKernel": "python",
+    "activeLayout": {
+      "extensionId": "verso.layout.notebook",
+      "layoutId": "notebook"
+    }
+  },
+  "cells": [
+    {
+      "id": "b4fb619d-f9d7-42f7-8126-915282799197",
+      "type": "markdown",
+      "source": "# Top 20 Python Stack Overflow Solutions\nThis Jupyter Notebook summarizes the 20 highest-rated and most useful Python questions and answers from Stack Overflow."
+    },
+    {
+      "id": "687f46d0-1e85-440f-b677-179c8f738d30",
+      "type": "markdown",
+      "source": "## 1. What does the \u0022yield\u0022 keyword do?\n**Stack Overflow:** [View Post](https://stackoverflow.com/questions/231767/what-does-the-yield-keyword-do)\n\n**Problem:** The user wants to understand how generator functions work and what the purpose of the \u0060yield\u0060 keyword is compared to a standard \u0060return\u0060 statement.\n\n**Answer:** \u0060yield\u0060 pauses the function\u0027s execution, saves its state, and returns a value to the caller. When resumed, execution continues right where it left off."
+    },
+    {
+      "id": "94a3792a-63e1-4171-ae55-e7901900ba6a",
+      "type": "code",
+      "language": "python",
+      "source": "def simple_generator():\n    yield 1\n    yield 2\n    yield 3\n\ngen = simple_generator()\nprint(next(gen))\nprint(next(gen))"
+    },
+    {
+      "id": "279c8b3c-d267-4cf5-839c-76e44532fdbf",
+      "type": "markdown",
+      "source": "## 2. What does \u0060if __name__ == \u0022__main__\u0022:\u0060 do?\n**Stack Overflow:** [View Post](https://stackoverflow.com/questions/419163/what-does-if-name-main-do)\n\n**Problem:** The user wants to know the purpose of the \u0060if __name__ == \u0022__main__\u0022:\u0060 block in Python scripts.\n\n**Answer:** This block ensures that the code inside it only runs when the script is executed directly, and *not* when it is imported as a module into another script."
+    },
+    {
+      "id": "5f8882ed-b35c-4c84-b919-6c9cd68d2af9",
+      "type": "code",
+      "language": "python",
+      "source": "if __name__ == \u0022__main__\u0022:\n    print(\u0022The script is being run directly!\u0022)"
+    },
+    {
+      "id": "761071d6-1ef3-4af6-a98a-be21c1b8868b",
+      "type": "markdown",
+      "source": "## 3. Does Python have a ternary conditional operator?\n**Stack Overflow:** [View Post](https://stackoverflow.com/questions/394809/does-python-have-a-ternary-conditional-operator)\n\n**Problem:** The user is looking for a concise inline conditional expression equivalent to \u0060condition ? true : false\u0060 found in other languages.\n\n**Answer:** Yes, Python\u0027s ternary operator syntax is: \u0060x if condition else y\u0060."
+    },
+    {
+      "id": "70ff61eb-37c1-4df0-93a4-c9bb6f4bf3ab",
+      "type": "code",
+      "language": "python",
+      "source": "is_logged_in = True\nstatus = \u0022Welcome back\u0022 if is_logged_in else \u0022Please log in\u0022\nprint(status)"
+    },
+    {
+      "id": "6a027057-e0b9-4b6c-9d9f-bfaea22a43ef",
+      "type": "markdown",
+      "source": "## 4. How do I check whether a file exists without exceptions?\n**Stack Overflow:** [View Post](https://stackoverflow.com/questions/82831/how-do-i-check-whether-a-file-exists-without-using-try-except)\n\n**Problem:** The user wants an efficient way to check for a file\u0027s existence without relying on \u0060try-except\u0060 blocks.\n\n**Answer:** Use Python\u0027s modern \u0060pathlib\u0060 module."
+    },
+    {
+      "id": "db3d71e6-c915-4687-ba12-eefe44a6d781",
+      "type": "code",
+      "language": "python",
+      "source": "from pathlib import Path\n\nfile_path = Path(\u0022config.json\u0022)\nif file_path.is_file():\n    print(\u0022File exists.\u0022)\nelse:\n    print(\u0022File does not exist.\u0022)"
+    },
+    {
+      "id": "b9ea3c37-0a71-4e71-b1a6-bed3116b45f2",
+      "type": "markdown",
+      "source": "## 5. How to merge two dictionaries?\n**Stack Overflow:** [View Post](https://stackoverflow.com/questions/38987/how-to-merge-two-dictionaries-in-a-single-expression)\n\n**Problem:** The user wants to combine two dictionaries into a single dictionary expression.\n\n**Answer:** Since Python 3.9, you can cleanly use the merge operator \u0060|\u0060."
+    },
+    {
+      "id": "bd3f1ae8-9099-41a8-9b65-6f9b0c218294",
+      "type": "code",
+      "language": "python",
+      "source": "dict1 = {\u0027a\u0027: 1, \u0027b\u0027: 2}\ndict2 = {\u0027b\u0027: 99, \u0027c\u0027: 4}\nmerged = dict1 | dict2\nprint(merged)"
+    },
+    {
+      "id": "83094630-e013-4b8d-b207-982a935e2008",
+      "type": "markdown",
+      "source": "## 6. How do I execute a shell command / program?\n**Stack Overflow:** [View Post](https://stackoverflow.com/questions/89228/how-do-i-execute-a-program-or-call-a-system-command)\n\n**Problem:** The user wants to run external terminal commands or programs from within a Python script.\n\n**Answer:** Use the recommended built-in \u0060subprocess\u0060 module."
+    },
+    {
+      "id": "0e7cf9cb-5318-4d0e-b614-07e288ee6b17",
+      "type": "code",
+      "language": "python",
+      "source": "import subprocess\n\nresult = subprocess.run([\u0022python\u0022, \u0022--version\u0022], capture_output=True, text=True)\nprint(result.stdout.strip())"
+    },
+    {
+      "id": "ce59fe4e-9da2-4772-b2ab-0058ddcdcca1",
+      "type": "markdown",
+      "source": "## 7. How do I create a directory and any missing parent directories?\n**Stack Overflow:** [View Post](https://stackoverflow.com/questions/273192/how-do-i-create-a-directory-and-any-missing-parent-directories)\n\n**Problem:** The user wants to create nested directory structures (like \u0060mkdir -p\u0060 in Unix).\n\n**Answer:** Use \u0060pathlib\u0060 with \u0060parents=True\u0060."
+    },
+    {
+      "id": "37761bb9-b48a-4d76-b131-bfc2aa52425d",
+      "type": "code",
+      "language": "python",
+      "source": "from pathlib import Path\nPath(\u0022data/processed/logs\u0022).mkdir(parents=True, exist_ok=True)"
+    },
+    {
+      "id": "704238cf-9383-46aa-82f7-f711215ac70f",
+      "type": "markdown",
+      "source": "## 8. How do I get the index of the current item in a for loop?\n**Stack Overflow:** [View Post](https://stackoverflow.com/questions/522563/how-do-i-get-the-index-of-the-current-item-in-a-for-loop)\n\n**Problem:** The user wants to access the iteration index while looping through a collection without maintaining manual counter variables.\n\n**Answer:** Use the built-in \u0060enumerate()\u0060 function."
+    },
+    {
+      "id": "37d0ff7f-ac60-43b6-906c-565647a2372e",
+      "type": "code",
+      "language": "python",
+      "source": "fruits = [\u0022apple\u0022, \u0022banana\u0022, \u0022cherry\u0022]\nfor index, fruit in enumerate(fruits):\n    print(f\u0022{index}: {fruit}\u0022)"
+    },
+    {
+      "id": "fa982cc3-97c6-41f9-9e44-7795dacfb7f5",
+      "type": "markdown",
+      "source": "## 9. How to make a flat list out of a list of lists?\n**Stack Overflow:** [View Post](https://stackoverflow.com/questions/952914/how-to-make-a-flat-list-out-of-list-of-lists)\n\n**Problem:** The user wants to flatten a nested list structure into a single 1D list.\n\n**Answer:** Use nested list comprehension."
+    },
+    {
+      "id": "cf0f68a0-29f6-4676-93e7-9c54dcbd9e93",
+      "type": "code",
+      "language": "python",
+      "source": "nested_list = [[1, 2, 3], [4, 5], [6, 7, 8]]\nflat_list = [item for sublist in nested_list for item in sublist]\nprint(flat_list)"
+    },
+    {
+      "id": "023aaa40-0ed5-4e1e-98df-65ecd62304e7",
+      "type": "markdown",
+      "source": "## 10. What is the difference between \u0060@staticmethod\u0060 and \u0060@classmethod\u0060?\n**Stack Overflow:** [View Post](https://stackoverflow.com/questions/1217927/what-is-the-difference-between-staticmethod-and-classmethod)\n\n**Problem:** The user wants to understand when to use \u0060@classmethod\u0060 versus \u0060@staticmethod\u0060 inside classes.\n\n**Answer:** \u0060@classmethod\u0060 takes the class (\u0060cls\u0060) as its first implicit argument; \u0060@staticmethod\u0060 takes neither instance (\u0060self\u0060) nor class (\u0060cls\u0060), acting like a regular function scoped inside the class namespace."
+    },
+    {
+      "id": "2e3c5492-7117-4518-8127-ad39ff83ae27",
+      "type": "code",
+      "language": "python",
+      "source": "class MyClass:\n    @classmethod\n    def class_method(cls):\n        return f\u0022Class: {cls.__name__}\u0022\n    \n    @staticmethod\n    def static_method():\n        return \u0022No class or instance data needed\u0022\n\nprint(MyClass.class_method())\nprint(MyClass.static_method())"
+    },
+    {
+      "id": "aea7a2b6-e64b-4cbf-a621-eeeeab0b09e9",
+      "type": "markdown",
+      "source": "## 11. Explain slice notation\n**Stack Overflow:** [View Post](https://stackoverflow.com/questions/509211/explain-slice-notation)\n\n**Problem:** The user wants to understand how Python\u0027s slice notation (\u0060[start:stop:step]\u0060) works.\n\n**Answer:** Slicing extracts portions of sequences based on start index, stop index, and step increment."
+    },
+    {
+      "id": "25ce7851-f000-4822-902e-60916a0b62a3",
+      "type": "code",
+      "language": "python",
+      "source": "numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]\nprint(numbers[1:8:2])\nprint(numbers[::-1])"
+    },
+    {
+      "id": "b33abf77-e1c4-42cc-bc01-d66be13005f8",
+      "type": "markdown",
+      "source": "## 12. Does Python have a string contains substring method?\n**Stack Overflow:** [View Post](https://stackoverflow.com/questions/3437059/does-python-have-a-string-contains-substring-method)\n\n**Problem:** The user wants to know how to test if a string contains a specific substring.\n\n**Answer:** Python uses the clean and readable \u0060in\u0060 operator."
+    },
+    {
+      "id": "e9904563-0264-49a9-8b00-227a432a5623",
+      "type": "code",
+      "language": "python",
+      "source": "text = \u0022Hello World, welcome to Python!\u0022\nif \u0022Python\u0022 in text:\n    print(\u0022Substring found!\u0022)"
+    },
+    {
+      "id": "1308034c-b78d-4171-98fa-30f88fc354d1",
+      "type": "markdown",
+      "source": "## 13. How do I sort a dictionary by value?\n**Stack Overflow:** [View Post](https://stackoverflow.com/questions/613183/how-do-i-sort-a-dictionary-by-value)\n\n**Problem:** The user wants to sort dictionary items based on their values rather than keys.\n\n**Answer:** Use \u0060sorted()\u0060 with a lambda key targeting values, then reconstruct the dictionary."
+    },
+    {
+      "id": "4faf40f1-5de1-49fc-a0f3-e4ca3828eaff",
+      "type": "code",
+      "language": "python",
+      "source": "scores = {\u0022Alice\u0022: 85, \u0022Bob\u0022: 92, \u0022Charlie\u0022: 78}\nsorted_scores = dict(sorted(scores.items(), key=lambda item: item[1], reverse=True))\nprint(sorted_scores)"
+    },
+    {
+      "id": "848295a7-8800-43d8-b2cd-94ab99d5cd93",
+      "type": "markdown",
+      "source": "## 14. How do I check if a list is empty?\n**Stack Overflow:** [View Post](https://stackoverflow.com/questions/53513/how-do-i-check-if-a-list-is-empty)\n\n**Problem:** The user wants the idiomatic way to check whether a list has elements or is empty.\n\n**Answer:** Rely on Python\u0027s truthy/falsy evaluation with \u0060if not my_list:\u0060."
+    },
+    {
+      "id": "8a7f6354-a2fa-4245-a8a6-1f5225687056",
+      "type": "code",
+      "language": "python",
+      "source": "my_list = []\nif not my_list:\n    print(\u0022The list is empty.\u0022)"
+    },
+    {
+      "id": "f98d3a98-5941-4cdd-96af-865c2a9759a4",
+      "type": "markdown",
+      "source": "## 15. What is the difference between append() and extend()?\n**Stack Overflow:** [View Post](https://stackoverflow.com/questions/252703/what-is-the-difference-between-append-and-extend)\n\n**Problem:** The user wants to understand how \u0060append()\u0060 and \u0060extend()\u0060 differ when adding elements to lists.\n\n**Answer:** \u0060append()\u0060 adds its argument as a single element; \u0060extend()\u0060 iterates over its argument and adds each element individually."
+    },
+    {
+      "id": "1a7d73ba-578e-4fdb-97fb-2e5a6f0538f2",
+      "type": "code",
+      "language": "python",
+      "source": "a = [1, 2]\na.append([3, 4])\nprint(\u0022append:\u0022, a)\n\nb = [1, 2]\nb.extend([3, 4])\nprint(\u0022extend:\u0022, b)"
+    },
+    {
+      "id": "ecd32027-8a53-4c96-9c93-827e289eed54",
+      "type": "markdown",
+      "source": "## 16. Difference between __str__ and __repr__\n**Stack Overflow:** [View Post](https://stackoverflow.com/questions/1436703/difference-between-str-and-repr)\n\n**Problem:** The user wants to know the distinct purposes of \u0060__str__\u0060 and \u0060__repr__\u0060 special methods.\n\n**Answer:** \u0060__str__\u0060 provides an informal, user-friendly string representation, while \u0060__repr__\u0060 provides an unambiguous representation intended for developers and debugging."
+    },
+    {
+      "id": "b222ec51-470d-4921-af24-a641a7a614bf",
+      "type": "code",
+      "language": "python",
+      "source": "class Car:\n    def __init__(self, brand):\n        self.brand = brand\n    def __str__(self):\n        return f\u0022Car of brand {self.brand}\u0022\n    def __repr__(self):\n        return f\u0022Car(brand=\u0027{self.brand}\u0027)\u0022\n\nc = Car(\u0022BMW\u0022)\nprint(str(c))\nprint(repr(c))"
+    },
+    {
+      "id": "a304f467-8313-4054-84ac-9b161abe82f3",
+      "type": "markdown",
+      "source": "## 17. How do I concatenate two lists?\n**Stack Overflow:** [View Post](https://stackoverflow.com/questions/1720421/how-do-i-concatenate-two-lists)\n\n**Problem:** The user wants to join two lists together into a new combined list.\n\n**Answer:** Use the \u0060\u002B\u0060 operator or \u0060extend()\u0060."
+    },
+    {
+      "id": "6d2c40eb-1ef7-499b-ba95-ef80ed572a6d",
+      "type": "code",
+      "language": "python",
+      "source": "list1 = [1, 2]\nlist2 = [3, 4]\ncombined = list1 \u002B list2\nprint(combined)"
+    },
+    {
+      "id": "cb0a3eb1-3294-4b51-ac6e-625adf293d1d",
+      "type": "markdown",
+      "source": "## 18. What do *args and **kwargs mean?\n**Stack Overflow:** [View Post](https://stackoverflow.com/questions/36901/what-does-args-and-kwargs-mean)\n\n**Problem:** The user wants to understand how to handle a variable number of positional and keyword arguments in functions.\n\n**Answer:** \u0060*args\u0060 collects extra positional arguments into a tuple, and \u0060**kwargs\u0060 collects extra keyword arguments into a dictionary."
+    },
+    {
+      "id": "965f53ba-ce68-49f3-9965-139f0d03a16a",
+      "type": "code",
+      "language": "python",
+      "source": "def flex_func(*args, **kwargs):\n    print(\u0022Args:\u0022, args)\n    print(\u0022Kwargs:\u0022, kwargs)\n\nflex_func(1, 2, 3, name=\u0022Python\u0022, type=\u0022Language\u0022)"
+    },
+    {
+      "id": "b7489773-736e-4c52-bf6c-e81908f5b718",
+      "type": "markdown",
+      "source": "## 19. How do I clone / copy a list?\n**Stack Overflow:** [View Post](https://stackoverflow.com/questions/2612802/how-do-i-clone-a-list-in-python)\n**Problem:** The user wants to duplicate a list safely without modifying the original collection, especially with nested items.\n\n**Answer:** Use slice notation \u0060[:]\u0060 for a shallow copy or \u0060copy.deepcopy()\u0060 for nested lists."
+    },
+    {
+      "id": "a4b49f1a-fa0f-44b4-ae2b-0abd23fad917",
+      "type": "code",
+      "language": "python",
+      "source": "import copy\noriginal = [1, 2, [3, 4]]\ncopy_list = original[:]\ndeep_copy_list = copy.deepcopy(original)"
+    },
+    {
+      "id": "07cdb306-2b2e-47b0-b114-cd49b0d02971",
+      "type": "markdown",
+      "source": "## 20. How do I time a function execution in Python?\n**Stack Overflow:** [View Post](https://stackoverflow.com/questions/175700/how-do-i-time-a-function-execution-in-python)\n**Problem:** The user wants to measure the execution time of code snippets.\n\n**Answer:** Use the IPython magic command \u0060%timeit\u0060 or the \u0060timeit\u0060 module."
+    },
+    {
+      "id": "922a1f6a-bb52-4acd-845b-f71215875ac4",
+      "type": "code",
+      "language": "python",
+      "source": "%timeit sum(range(1000))"
+    }
+  ]
+}
