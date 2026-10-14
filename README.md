@@ -6,13 +6,14 @@
   <img src="https://img.shields.io/badge/JupyterLab-4.x-F37626?style=for-the-badge&logo=jupyter&logoColor=white" alt="JupyterLab">
   <img src="https://img.shields.io/badge/Verso-Notebooks-7000FF?style=for-the-badge&logo=markdown&logoColor=white" alt="Verso">
   <img src="https://img.shields.io/badge/Anaconda-Distribution-44A833?style=for-the-badge&logo=anaconda&logoColor=white" alt="Anaconda">
-</p>
-
-<p align="center">
   <img src="https://img.shields.io/badge/Status-Active%20%2F%20Expanding-yellow?style=for-the-badge" alt="Status">
 </p>
 
 A collection of **Python learning notes, examples, exercises, and projects**, created primarily with Jupyter and Verso notebooks, structured for upcoming multi-language guides.
+
+## Screenshot
+
+<img width="1573" height="822" alt="image" src="https://github.com/user-attachments/assets/ce11e4c5-198e-42c5-97bf-abe75ef64145" />
 
 ## Repository Structure
 
